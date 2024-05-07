@@ -50,13 +50,17 @@ console.log(prioritize(false, false));
 //params: num, num
 //return: num
 const calculatePay = (wage, hours) => {
-  let paycheck = wage * 40;
-  if (hours > 40) {
+  let paycheck = 0;
+  if (hours <= 40) {
+    paycheck = wage * hours;
+    return paycheck;
+  } else {
     const overtimeHours = hours - 40;
     const overtimePay = wage * 1.5;
-    paycheck += overtimePay * overtimeHours;
+    paycheck = wage * 40 + overtimePay * overtimeHours;
+    return paycheck;
   }
-  return paycheck;
 };
 console.log(calculatePay(12, 60));
 console.log(calculatePay(10, 50));
+console.log(calculatePay(10, 20));

@@ -37,6 +37,8 @@ const logDeath = (winner, loser) => {
 const isDead = (health) => {
   return health <= 0 ? true : false;
 };
+// alternative:
+// const isDead = (health) => health <= 0;
 
 // params: str, str, num, num
 // return: nothing?
